@@ -36,7 +36,7 @@ var UserSchema = new mongoose.Schema({
 
 
 UserSchema.methods.toJSON = function() {
-    var user = this;
+    var user = this;//Instance methods get called to the individual document
     var userObject = user.toObject();
 
     return _.pick(userObject, ['_id', 'email']);
